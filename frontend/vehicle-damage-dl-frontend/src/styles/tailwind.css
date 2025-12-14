@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom */
+* {
+  font-family: "Oswald", sans-serif;
+}
+
+NavLink {
+  text-decoration: none;
+}
+
+.nav-logo {
+  font-family: "Bitcount Single", system-ui;
+}

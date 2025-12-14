@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Razorpay Payment</title>
+</head>
+<body>
+
+    <h2>Pay Amount</h2>
+
+    <form id="paymentForm">
+        <label>Enter Amount (₹):</label><br>
+        <input type="number" id="amount" required>
+        <button type="submit">Pay Now</button>
+    </form>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+document.getElementById("paymentForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    let amount = document.getElementById("amount").value;
+
+    // Create order by calling Flask API
+    let response = await fetch("/create-order", {
+        method: "POST",
+        body: new URLSearchParams({ amount: amount }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    });
+
+    let orderData = await response.json();
+
+    // Razorpay Checkout Options
+    let options = {
+        "key": "{{ key_id }}",
+        "amount": orderData.amount,
+        "currency": "INR",
+        "name": "Vehicle Damage System",
+        "description": "Payment",
+        "order_id": orderData.id,
+        "handler": function (response) {
+
+            let form = document.createElement("form");
+            form.method = "POST";
+            form.action = "/verify";
+
+            for (let key in response) {
+                let input = document.createElement("input");
+                input.type = "hidden";
+                input.name = key;
+                input.value = response[key];
+                form.appendChild(input);
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+    };
+
+    let rzp = new Razorpay(options);
+    rzp.open();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "name": "vehicle-damage-dl-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@dataconnect/generated": "file:src/dataconnect-generated",
+    "@google/model-viewer": "^1.12.0",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "axios": "^1.13.2",
+    "bootstrap": "^5.3.8",
+    "firebase": "^12.6.0",
+    "framer-motion": "^10.18.0",
+    "lucide-react": "^0.553.0",
+    "razorpay": "^2.9.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "react-parallax-tilt": "^1.7.314",
+    "react-router-dom": "^6.14.1",
+    "react-tsparticles": "^2.12.2",
+    "three": "^0.159.0",
+    "three-mesh-bvh": "^0.8.0",
+    "tsparticles": "^3.9.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "vite": "^7.2.4"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}

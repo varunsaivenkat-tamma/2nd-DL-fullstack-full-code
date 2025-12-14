@@ -1,0 +1,44 @@
+# React + Vite Project .gitignore (Correct for your structure)
+
+### Node Dependencies
+node_modules/
+
+### Build Output
+/dist/
+
+### Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+### Log files
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+### Vite Cache
+.vite/
+
+### Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+### System Files
+.DS_Store
+Thumbs.db
+
+### Testing / Coverage
+/coverage/
+*.lcov
+
+### TypeScript
+*.tsbuildinfo
+
+### Optional
+.vercel/
+.cache/
