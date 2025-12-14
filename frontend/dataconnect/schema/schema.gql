@@ -1,0 +1,41 @@
+type User @table {
+  displayName: String!
+  email: String
+  photoUrl: String
+  createdAt: Timestamp!
+}
+
+type Vehicle @table {
+  user: User!
+  make: String!
+  model: String!
+  year: Int!
+  licensePlate: String!
+  vin: String
+  color: String
+  createdAt: Timestamp!
+}
+
+type Image @table {
+  vehicle: Vehicle!
+  imageUrl: String!
+  uploadDate: Timestamp!
+  description: String
+}
+
+type DamageDetectionResult @table {
+  image: Image!
+  detectionDate: Timestamp!
+  isAIConfirmed: Boolean!
+  overallAssessment: String
+}
+
+type DamagePoint @table {
+  damageDetectionResult: DamageDetectionResult!
+  damageType: String!
+  severity: String!
+  xCoordinate: Float!
+  yCoordinate: Float!
+  notes: String
+  isUserVerified: Boolean
+}
