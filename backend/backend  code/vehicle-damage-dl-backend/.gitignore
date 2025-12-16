@@ -6,8 +6,7 @@ car_damage_env/
 __pycache__/
 *.pyc
 
-# Environment variables
-.env
+
 
 # Model files & large AI artifacts
 *.h5
